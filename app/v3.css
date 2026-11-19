@@ -1,0 +1,37 @@
+/* =================== v3: motion polish =================== */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* kinetic name */
+.home h1 .word { display: inline-block; white-space: nowrap; }
+.home h1 .ch { display: inline-block; animation: chIn .9s var(--ease) backwards; animation-delay: calc(var(--i) * 45ms + .1s); transition: transform .35s var(--ease), color .25s; }
+.home h1 .ch:hover { transform: translateY(-.07em) rotate(-5deg); color: var(--cherry); }
+@keyframes chIn { from { opacity: 0; transform: translateY(.55em) rotate(10deg); } }
+
+/* studio grid behind the 3D scene */
+.scene { background: radial-gradient(circle, rgba(31, 26, 23, .07) 1px, transparent 1.6px) 0 0 / 22px 22px, linear-gradient(180deg, #fbf3e7, #f6e7d6); }
+html[data-theme=dark] .scene { background: radial-gradient(circle, rgba(244, 238, 227, .07) 1px, transparent 1.6px) 0 0 / 22px 22px, linear-gradient(180deg, #2a231b, #1c1813); }
+.bubble { z-index: 7; }
+.device-phone .device-frame { overflow: hidden; }
+
+/* hero polaroid beside the scene */
+.irl { top: 46%; }
+@media (max-width: 1100px) { .irl { top: 14px; } }
+
+/* section titles pull into focus as they enter */
+.js .section-head[data-reveal] { opacity: 1; transform: none; }
+.js .section-head[data-reveal] h2 { filter: blur(12px); opacity: .15; transform: scale(1.035); transform-origin: 0 50%; transition: filter 1.2s var(--ease), opacity 1.2s var(--ease), transform 1.2s var(--ease); }
+.js .section-head[data-reveal].in h2 { filter: none; opacity: 1; transform: none; }
+
+/* cursor */
+.cursor { position: fixed; left: 0; top: 0; z-index: 300; width: 0; height: 0; pointer-events: none; opacity: 0; transition: opacity .25s; }
+.cursor.live.show { opacity: 1; }
+.cursor::before { content: ''; position: absolute; left: -15px; top: -15px; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--ink); transition: transform .3s var(--ease), background .25s, border-color .25s; }
+.cursor.hover::before { transform: scale(1.45); border-color: var(--cherry); }
+.cursor.has-label::before { transform: translate(30px, 30px) scale(2.2); background: var(--cherry); border-color: transparent; box-shadow: 0 6px 18px -6px rgba(0, 0, 0, .35); }
+.cursor.press::before { transform: scale(1.1); }
+.cursor span { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%) scale(.5); font: 750 11.5px/1 var(--display); color: #fff; white-space: nowrap; opacity: 0; transition: transform .3s var(--ease), opacity .2s; }
+.cursor.has-label span { opacity: 1; transform: translate(calc(-50% + 30px), calc(-50% + 30px)) scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .home h1 .ch { animation: none; }
+}
