@@ -51,7 +51,7 @@ npm run preview    # http://127.0.0.1:4173
 npm test           # Playwright, desktop + mobile
 ```
 
-Deploys to Vercel as is. Set `NEXT_PUBLIC_SITE_URL` to your domain for correct Open Graph links.
+Live: **https://arynttai.github.io/akma-portfolio/** — deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to `main`.
 
 ## Map
 

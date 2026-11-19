@@ -1,3 +1,4 @@
+import {asset} from '@/lib/base'
 import type {Metadata, Viewport} from 'next'
 import '@fontsource-variable/bricolage-grotesque'
 import '@fontsource/dm-sans/latin-400.css'
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: {default: title, template: '%s — Akmaral Aryntay'},
   description,
   ...(origin ? {alternates: {canonical: '/'}} : {}),
-  icons: {icon: '/icon.svg'},
+  icons: {icon: asset('/icon.svg')},
   openGraph: {type: 'website', title, description, images: [{url: '/social.jpg', width: 1200, height: 630, alt: 'Akmaral Aryntay portfolio with a clay-style 3D mini character at a desk'}]},
   twitter: {card: 'summary_large_image', title, description, images: ['/social.jpg']}
 }

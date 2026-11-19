@@ -1,3 +1,4 @@
+import {asset} from '@/lib/base'
 export type Provenance = 'live' | 'demo' | 'local' | 'materials' | 'concept' | 'recon'
 export const provenanceText: Record<Provenance, string> = {
   live: 'Public page of the live product',
@@ -48,12 +49,12 @@ export const projects: Project[] = [
     team: 'Team product at Freedom Cloud Holding Ltd. ~100 of my commits, Jul–Sep 2026.',
     demo: 'arnaai',
     shots: [
-      d('/media/work/arnasmart-map.webp', 'ArnaSmart map with object tree, meter clusters and the ArnaAI panel with analytic presets', 'Map + ArnaAI presets', 'recon'),
-      d('/media/work/arnasmart-chat.webp', 'ArnaSmart device table with the ArnaAI chat answering which meters are offline', 'Devices + ArnaAI chat', 'recon'),
-      d('/media/work/arnasmart-login.webp', 'ArnaSmart sign-in page with a green planet horizon and the ARNA SMART logo', 'Sign-in, arnasmart.astel.kz', 'live'),
-      m('/media/work/arnasmart-mobile-m.webp', 'ArnaSmart mobile map with the ArnaAI mascot docked in the corner', 'Mobile + docked mascot', 'recon'),
-      m('/media/work/tools-tasks-m.webp', 'Arna Tools installer app with a list of installation tasks and progress', 'Arna Tools installer', 'recon'),
-      m('/media/work/arnasmart-login-m.webp', 'ArnaSmart sign-in page on a phone', 'Mobile sign-in', 'live')
+      d(asset('/media/work/arnasmart-map.webp'), 'ArnaSmart map with object tree, meter clusters and the ArnaAI panel with analytic presets', 'Map + ArnaAI presets', 'recon'),
+      d(asset('/media/work/arnasmart-chat.webp'), 'ArnaSmart device table with the ArnaAI chat answering which meters are offline', 'Devices + ArnaAI chat', 'recon'),
+      d(asset('/media/work/arnasmart-login.webp'), 'ArnaSmart sign-in page with a green planet horizon and the ARNA SMART logo', 'Sign-in, arnasmart.astel.kz', 'live'),
+      m(asset('/media/work/arnasmart-mobile-m.webp'), 'ArnaSmart mobile map with the ArnaAI mascot docked in the corner', 'Mobile + docked mascot', 'recon'),
+      m(asset('/media/work/tools-tasks-m.webp'), 'Arna Tools installer app with a list of installation tasks and progress', 'Arna Tools installer', 'recon'),
+      m(asset('/media/work/arnasmart-login-m.webp'), 'ArnaSmart sign-in page on a phone', 'Mobile sign-in', 'live')
     ],
     links: [{label: 'arnasmart.astel.kz', href: 'https://arnasmart.astel.kz', note: 'Sign-in only'}]
   },
@@ -71,12 +72,12 @@ export const projects: Project[] = [
     stack: ['Angular 22', 'NestJS', 'MongoDB', 'Flutter', 'Android BLE', 'MapLibre', 'Telegram Bot API'],
     team: 'Team product at Freedom Cloud Holding Ltd. ~100 of my commits, Sep–Nov 2026.',
     shots: [
-      d('/media/work/djailay-map.webp', 'Digital Jailay map with pasture polygons and animal markers on satellite imagery', 'Pastures and animals', 'demo'),
-      d('/media/work/djailay-heatmap.webp', 'Digital Jailay grazing heatmap over pastures', 'Grazing heatmap', 'demo'),
-      d('/media/work/djailay-home.webp', 'Digital Jailay farm dashboard with cards for animals without signal, without coordinates and with low battery', 'Farm dashboard', 'demo'),
-      d('/media/work/djailay-animals.webp', 'Digital Jailay animal list with collar IDs', 'Animals', 'demo'),
-      m('/media/work/djailay-home-m.webp', 'Digital Jailay farm dashboard on a phone', 'Mobile dashboard', 'demo'),
-      m('/media/work/djailay-map-m.webp', 'Digital Jailay map on a phone', 'Mobile map', 'demo')
+      d(asset('/media/work/djailay-map.webp'), 'Digital Jailay map with pasture polygons and animal markers on satellite imagery', 'Pastures and animals', 'demo'),
+      d(asset('/media/work/djailay-heatmap.webp'), 'Digital Jailay grazing heatmap over pastures', 'Grazing heatmap', 'demo'),
+      d(asset('/media/work/djailay-home.webp'), 'Digital Jailay farm dashboard with cards for animals without signal, without coordinates and with low battery', 'Farm dashboard', 'demo'),
+      d(asset('/media/work/djailay-animals.webp'), 'Digital Jailay animal list with collar IDs', 'Animals', 'demo'),
+      m(asset('/media/work/djailay-home-m.webp'), 'Digital Jailay farm dashboard on a phone', 'Mobile dashboard', 'demo'),
+      m(asset('/media/work/djailay-map-m.webp'), 'Digital Jailay map on a phone', 'Mobile map', 'demo')
     ],
     links: [{label: 'djailay.astel.kz', href: 'https://djailay.astel.kz', note: 'Has a public demo: “Войти в demo”'}]
   },
@@ -94,9 +95,9 @@ export const projects: Project[] = [
     stack: ['Angular 19', 'Express 5', 'MongoDB', 'WebSocket', 'Telegram'],
     team: 'Internal team tool. ~160 of my commits, Apr–Nov 2026.',
     shots: [
-      d('/media/work/reporter-telegram.webp', 'Reporter Telegram management: alert types, sources, subscribers and on/off status', 'Telegram management', 'recon'),
-      d('/media/work/reporter-ailogs.webp', 'Reporter AI request logs with average response time and an open conversation', 'AI request logs', 'recon'),
-      d('/media/work/reporter-login.webp', 'Reporter sign-in card on a grey gradient', 'Sign-in, reporter.astel.kz', 'live')
+      d(asset('/media/work/reporter-telegram.webp'), 'Reporter Telegram management: alert types, sources, subscribers and on/off status', 'Telegram management', 'recon'),
+      d(asset('/media/work/reporter-ailogs.webp'), 'Reporter AI request logs with average response time and an open conversation', 'AI request logs', 'recon'),
+      d(asset('/media/work/reporter-login.webp'), 'Reporter sign-in card on a grey gradient', 'Sign-in, reporter.astel.kz', 'live')
     ],
     links: [{label: 'reporter.astel.kz', href: 'https://reporter.astel.kz', note: 'Internal, sign-in only'}]
   },
@@ -111,12 +112,12 @@ export const projects: Project[] = [
     stack: ['Angular 22', 'NestJS', 'MongoDB', 'Modbus RTU', 'TCP / LTE'],
     team: 'Team product. My exact role here is not confirmed in git.',
     shots: [
-      d('/media/work/arnalight-dashboard.webp', 'ArnaLight control panel with cabinet, luminaire and alarm counters', 'Control panel', 'demo'),
-      d('/media/work/arnalight-map.webp', 'ArnaLight map of a city with cabinet markers', 'Map', 'demo'),
-      d('/media/work/arnalight-cabinet.webp', 'ArnaLight cabinet page with voltage, current and power measurements', 'Cabinet', 'demo'),
-      d('/media/work/arnalight-schedules.webp', 'ArnaLight lighting schedules', 'Schedules', 'demo'),
-      m('/media/work/arnalight-dashboard-m.webp', 'ArnaLight control panel on a phone', 'Mobile panel', 'demo'),
-      m('/media/work/arnalight-map-m.webp', 'ArnaLight map on a phone', 'Mobile map', 'demo')
+      d(asset('/media/work/arnalight-dashboard.webp'), 'ArnaLight control panel with cabinet, luminaire and alarm counters', 'Control panel', 'demo'),
+      d(asset('/media/work/arnalight-map.webp'), 'ArnaLight map of a city with cabinet markers', 'Map', 'demo'),
+      d(asset('/media/work/arnalight-cabinet.webp'), 'ArnaLight cabinet page with voltage, current and power measurements', 'Cabinet', 'demo'),
+      d(asset('/media/work/arnalight-schedules.webp'), 'ArnaLight lighting schedules', 'Schedules', 'demo'),
+      m(asset('/media/work/arnalight-dashboard-m.webp'), 'ArnaLight control panel on a phone', 'Mobile panel', 'demo'),
+      m(asset('/media/work/arnalight-map-m.webp'), 'ArnaLight map on a phone', 'Mobile map', 'demo')
     ],
     links: [{label: 'testiot.astel.kz', href: 'https://testiot.astel.kz', note: 'Test environment, press “Демо”'}]
   },
@@ -132,7 +133,7 @@ export const projects: Project[] = [
     spark: 'The AI half and the 3D half only share a tiny file: corners in metres and one height. Try it below with the repo’s real data.',
     stack: ['FastAPI', 'Python', 'HorizonNet / DMH-Net', 'React', 'React Three Fiber'],
     demo: 'room',
-    shots: [{src: '/media/work/myroom-panorama-2k.webp', alt: 'Equirectangular 360° panorama of an empty room with a window', w: 2048, h: 1024, device: 'laptop', label: 'Sample input panorama from the repo', source: 'materials'}],
+    shots: [{src: asset('/media/work/myroom-panorama-2k.webp'), alt: 'Equirectangular 360° panorama of an empty room with a window', w: 2048, h: 1024, device: 'laptop', label: 'Sample input panorama from the repo', source: 'materials'}],
     links: [{label: 'GitHub', href: 'https://github.com/arynttai/myroom'}]
   },
   {
@@ -147,8 +148,8 @@ export const projects: Project[] = [
     stack: ['.NET MAUI', 'C#', 'PostgreSQL', 'ZXing'],
     demo: 'attendance',
     shots: [
-      m('/media/work/attendance-login.webp', 'Attendance Control sign-in with Astana IT University logo and a teacher or student choice', 'Sign-in', 'materials', 896, 404),
-      m('/media/work/attendance-statistics.webp', 'Attendance statistics with a line chart and a present, late and absent pie chart', 'Statistics', 'materials', 768, 346)
+      m(asset('/media/work/attendance-login.webp'), 'Attendance Control sign-in with Astana IT University logo and a teacher or student choice', 'Sign-in', 'materials', 896, 404),
+      m(asset('/media/work/attendance-statistics.webp'), 'Attendance statistics with a line chart and a present, late and absent pie chart', 'Statistics', 'materials', 768, 346)
     ],
     links: []
   },
@@ -164,9 +165,9 @@ export const projects: Project[] = [
     spark: 'Search answers while you type across a long technical catalogue.',
     stack: ['Next.js 16', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Recharts'],
     shots: [
-      d('/media/work/agri-home.webp', 'Agriprom home page: European solutions for cow comfort in Kazakhstan', 'Home', 'local'),
-      d('/media/work/agri-catalog.webp', 'Agriprom product catalogue with category sidebar', 'Catalogue', 'local'),
-      d('/media/work/agri-search.webp', 'Agriprom catalogue filtered by the search term brush', 'Search', 'local')
+      d(asset('/media/work/agri-home.webp'), 'Agriprom home page: European solutions for cow comfort in Kazakhstan', 'Home', 'local'),
+      d(asset('/media/work/agri-catalog.webp'), 'Agriprom product catalogue with category sidebar', 'Catalogue', 'local'),
+      d(asset('/media/work/agri-search.webp'), 'Agriprom catalogue filtered by the search term brush', 'Search', 'local')
     ],
     links: []
   },
@@ -220,5 +221,5 @@ export const links = {
   email: 'arynttai@gmail.com',
   telegram: 'https://t.me/sindugahvon',
   telegramHandle: '@sindugahvon',
-  cv: '/Akmaral_Aryntay_CV.pdf'
+  cv: asset('/Akmaral_Aryntay_CV.pdf')
 }

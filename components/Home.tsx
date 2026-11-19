@@ -1,4 +1,5 @@
 'use client'
+import {asset} from '@/lib/base'
 import dynamic from 'next/dynamic'
 import {useEffect, useRef, useState} from 'react'
 import {projects, links} from '@/data/content'
@@ -10,12 +11,12 @@ import {FreedomBadge} from './Logos'
 const DeskScene = dynamic(() => import('./three/DeskScene'), {ssr: false, loading: () => null})
 
 const screens = [
-  {id: 'djailay', src: '/media/work/djailay-map.webp'},
-  {id: 'arnalight', src: '/media/work/arnalight-dashboard.webp'},
-  {id: 'agriprom', src: '/media/work/agri-home.webp'},
-  {id: 'arnasmart', src: '/media/work/arnasmart-map.webp'},
-  {id: 'djailay', src: '/media/work/djailay-heatmap.webp'},
-  {id: 'arnalight', src: '/media/work/arnalight-map.webp'}
+  {id: 'djailay', src: asset('/media/work/djailay-map.webp')},
+  {id: 'arnalight', src: asset('/media/work/arnalight-dashboard.webp')},
+  {id: 'agriprom', src: asset('/media/work/agri-home.webp')},
+  {id: 'arnasmart', src: asset('/media/work/arnasmart-map.webp')},
+  {id: 'djailay', src: asset('/media/work/djailay-heatmap.webp')},
+  {id: 'arnalight', src: asset('/media/work/arnalight-map.webp')}
 ].map(s => ({...s, name: projects.find(p => p.id === s.id)!.name}))
 
 const lines = [
@@ -96,12 +97,12 @@ export default function Home() {
 
     <div className="home-stage">
       <figure className="polaroid irl" aria-label="Real photo">
-        <img src="/media/portraits/profile-small.webp" alt="Akmaral in profile, white shirt and burgundy tie, dark studio background" width={600} height={900} fetchPriority="high"/>
+        <img src={asset('/media/portraits/profile-small.webp')} alt="Akmaral in profile, white shirt and burgundy tie, dark studio background" width={600} height={900} fetchPriority="high"/>
         <figcaption>the real one</figcaption>
       </figure>
       <div className="scene">
         {webgl === null ? null : webgl === false || reduced
-          ? <img className="scene-poster" src="/media/scene/desk.webp" alt="Clay-style 3D Mini Akma sitting at a desk with a monitor, a record player and a satellite" width={1200} height={1000}/>
+          ? <img className="scene-poster" src={asset('/media/scene/desk.webp')} alt="Clay-style 3D Mini Akma sitting at a desk with a monitor, a record player and a satellite" width={1200} height={1000}/>
           : <DeskScene screens={screens} screenIndex={index} onOpenProject={openProject} onPoke={poke} onRecord={record}
               onSatellite={() => document.getElementById('experience')?.scrollIntoView({behavior: 'smooth'})}
               waving={waving} dancing={dancing} shades={shades}/>}

@@ -1,15 +1,16 @@
 'use client'
+import {asset} from '@/lib/base'
 import {useRef} from 'react'
 import {skills, links} from '@/data/content'
 import {Icon} from './Marks'
 import {AituLogo} from './Logos'
 
 const photos = [
-  {src: '/media/portraits/record.webp', alt: 'Black and white close-up of Akmaral winking over a vinyl record', w: 960, h: 1280, cap: 'side A', x: 2, y: 6, r: -6},
-  {src: '/media/portraits/roses.webp', alt: 'Akmaral holding red roses, one hand behind her head', w: 853, h: 1280, cap: 'roses, always', x: 30, y: 0, r: 4},
-  {src: '/media/portraits/mic.webp', alt: 'Akmaral in sunglasses singing into a microphone, a guitar over her shoulder', w: 840, h: 1120, cap: 'yes, the sunglasses', x: 56, y: 10, r: -3},
-  {src: '/media/portraits/strings.webp', alt: 'Akmaral sitting on the floor with an electric guitar', w: 720, h: 1280, cap: 'strings', x: 16, y: 42, r: 5},
-  {src: '/media/portraits/studio.webp', alt: 'Akmaral standing with a guitar among instruments in a white studio', w: 960, h: 1280, cap: 'the whole set', x: 46, y: 46, r: -5}
+  {src: asset('/media/portraits/record.webp'), alt: 'Black and white close-up of Akmaral winking over a vinyl record', w: 960, h: 1280, cap: 'side A', x: 2, y: 6, r: -6},
+  {src: asset('/media/portraits/roses.webp'), alt: 'Akmaral holding red roses, one hand behind her head', w: 853, h: 1280, cap: 'roses, always', x: 30, y: 0, r: 4},
+  {src: asset('/media/portraits/mic.webp'), alt: 'Akmaral in sunglasses singing into a microphone, a guitar over her shoulder', w: 840, h: 1120, cap: 'yes, the sunglasses', x: 56, y: 10, r: -3},
+  {src: asset('/media/portraits/strings.webp'), alt: 'Akmaral sitting on the floor with an electric guitar', w: 720, h: 1280, cap: 'strings', x: 16, y: 42, r: 5},
+  {src: asset('/media/portraits/studio.webp'), alt: 'Akmaral standing with a guitar among instruments in a white studio', w: 960, h: 1280, cap: 'the whole set', x: 46, y: 46, r: -5}
 ]
 
 function Polaroid({p, i}: {p: typeof photos[number]; i: number}) {

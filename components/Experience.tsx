@@ -1,4 +1,5 @@
 'use client'
+import {asset} from '@/lib/base'
 import dynamic from 'next/dynamic'
 import {useEffect, useState} from 'react'
 import {jobs, projects, wins} from '@/data/content'
@@ -37,7 +38,7 @@ export default function Experience() {
 
     <div className="orbit-wrap">
       <div className="orbit-stage">
-        {webgl === null ? null : webgl ? <OrbitScene sats={sats} selected={sel} onSelect={setSel}/> : <img className="orbit-poster" src="/media/scene/orbit.webp" alt="" width={1000} height={800}/>}
+        {webgl === null ? null : webgl ? <OrbitScene sats={sats} selected={sel} onSelect={setSel}/> : <img className="orbit-poster" src={asset('/media/scene/orbit.webp')} alt="" width={1000} height={800}/>}
         <span className="orbit-center-label"><FreedomMark size={16}/>Freedom Cloud Holding</span>
       </div>
       <div className="orbit-side">

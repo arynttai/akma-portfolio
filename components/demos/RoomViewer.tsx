@@ -1,4 +1,5 @@
 'use client'
+import {asset} from '@/lib/base'
 import {useEffect, useRef, useState} from 'react'
 
 type Mode = 'panorama' | 'room'
@@ -24,7 +25,7 @@ export default function RoomViewer() {
         const [THREE, {OrbitControls}, data] = await Promise.all([
           import('three'),
           import('three/examples/jsm/controls/OrbitControls.js'),
-          fetch('/media/work/myroom-room.json').then(r => r.json() as Promise<Room>)
+          fetch(asset('/media/work/myroom-room.json')).then(r => r.json() as Promise<Room>)
         ])
         if (disposed) return
         setRoom(data)
@@ -41,7 +42,7 @@ export default function RoomViewer() {
         controls.enableDamping = true
 
         // Panorama: the real sample input used by MyRoom's pipeline
-        const tex = await new THREE.TextureLoader().loadAsync(innerWidth < 700 ? '/media/work/myroom-panorama-2k.webp' : '/media/work/myroom-panorama.webp')
+        const tex = await new THREE.TextureLoader().loadAsync(innerWidth < 700 ? asset('/media/work/myroom-panorama-2k.webp') : asset('/media/work/myroom-panorama.webp'))
         if (disposed) { renderer.dispose(); return }
         tex.colorSpace = THREE.SRGBColorSpace
         const sphereGeo = new THREE.SphereGeometry(40, 64, 32)
@@ -128,7 +129,7 @@ export default function RoomViewer() {
 
   return <div className="demo room">
     <div className="room-stage" ref={host}>
-      {state !== 'ready' && <img className="room-poster" src="/media/work/myroom-panorama-2k.webp" alt="Equirectangular 360° panorama of an empty room, the sample input of MyRoom" width={2048} height={1024}/>}
+      {state !== 'ready' && <img className="room-poster" src={asset('/media/work/myroom-panorama-2k.webp')} alt="Equirectangular 360° panorama of an empty room, the sample input of MyRoom" width={2048} height={1024}/>}
       {state === 'loading' && <span className="room-status">Loading scene…</span>}
       {state === 'failed' && <span className="room-status">3D is not available on this device, so the input panorama is shown instead.</span>}
       {state === 'ready' && <span className="room-hint">{mode === 'panorama' ? 'Drag to look around' : 'Drag to orbit · scroll to zoom'}</span>}
