@@ -57,6 +57,26 @@ export const projects: Project[] = [
     links: []
   },
   {
+    id: 'qolda', name: 'Qolda', kicker: 'Mentors for newcomers in IT', year: '2024', accent: 'sky', tile: 'tall',
+    oneLiner: 'Find a mentor in IT, read their posts and write to them, all in one app.',
+    what: 'An iOS app that connects newcomers in IT with mentors: a news feed with posts and events, a list of mentors with their skills, profiles and messages. Data lives in Firebase.',
+    mine: [
+      'The mentors page: a list with photos, roles and skills loaded from Firebase.',
+      'Posts for the news feed: a form with a title, text and an image, and post cells with the time.',
+      'The specialist screen and the updated profile with role, experience, skills and languages.'
+    ],
+    spark: 'Qolda is Kazakh for “support”. The logo is a handshake inside a search glass: find someone, then shake hands.',
+    stack: ['Swift', 'UIKit', 'SnapKit', 'Firebase'],
+    team: 'Two-person team, summer 2024. My commits cover mentors, posts and the profile.',
+    shots: [
+      m(asset('/media/work/qolda-news.webp'), 'Qolda news feed with an event post and posts from mentors', 'News feed', 'recon'),
+      m(asset('/media/work/qolda-mentors.webp'), 'Qolda mentor list with roles, years of experience and skills', 'Mentors', 'recon'),
+      m(asset('/media/work/qolda-profile.webp'), 'A mentor profile with experience, skills and languages', 'Mentor profile', 'recon'),
+      m(asset('/media/work/qolda-post.webp'), 'New post form with a title, text and an attached image', 'New post', 'recon')
+    ],
+    links: []
+  },
+  {
     id: 'zheztyrnak', name: 'Zheztyrnak', kicker: 'Unity horror game', year: '2024', accent: 'lilac', tile: 'square',
     oneLiner: 'A night village, a flashlight and five runes before Zheztyrnak finds you.',
     what: 'A first-person horror game in Unity built around Zheztyrnak, the copper-clawed witch from Kazakh folklore. You walk through a dark aul and the forest behind it with a flashlight and collect five runes.',
@@ -186,7 +206,7 @@ export const projects: Project[] = [
     links: []
   },
   {
-    id: 'reporter', name: 'Reporter', kicker: 'Ops console for IoT products', year: '2026', accent: 'lilac', tile: 'square',
+    id: 'reporter', name: 'Reporter', kicker: 'Ops console for IoT products', year: '2026', accent: 'lilac', tile: 'wide',
     oneLiner: 'The team’s back office: who gets which alert in Telegram, what the AI said, and which import went wrong.',
     what: 'Reporter is the internal console around ArnaSmart, Digital Jailay and the lighting product: user activity, CRUD logs, reports, Telegram alert routing and AI chat logs.',
     mine: [
@@ -233,7 +253,6 @@ export const more: More[] = [
   {name: 'AituBalance', what: 'An AI psychology assistant for AITU students.', stack: 'Next.js · Gemini', year: '2025'},
   {name: 'NomadAI', what: 'An AI travel concierge with a “lux digital” look.', stack: 'Next.js · Tailwind', year: '2025'},
   {name: 'Constella', what: 'Forms hackathon teams as “constellations”: cores, bridges, skill balance.', stack: 'Node.js · WebSocket · Canvas', year: '2025'},
-  {name: 'Qolda', what: 'Mentors for newcomers in IT: profiles, news, messages.', stack: 'Swift · UIKit · MVVM · Firebase', year: '2024'},
   {name: 'NeoDent', what: 'Dental clinic booking: doctors, filters, calendar, history.', stack: 'Swift · UIKit · MVVM', year: '2024'},
   {name: 'Music Hub', what: 'Book musicians and organise events.', stack: 'FastAPI · PostgreSQL', year: '2024', href: 'https://github.com/arynttai/music_hub', linkLabel: 'GitHub'},
   {name: 'PetHack MVP', what: 'Team lead, mobile MVP in eight hours. Won Best Mobile Application.', stack: 'Mobile', year: '2024'}
