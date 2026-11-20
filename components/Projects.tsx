@@ -19,7 +19,7 @@ function Visual({p}: {p: Project}) {
   return <div className={'visual' + (laptop ? '' : ' phones-only')}>
     {laptop
       ? <><div className="float-laptop"><Device shot={laptop}/></div>{phones[0] && <div className="float-phone fp-side"><Device shot={phones[0]}/></div>}</>
-      : phones.slice(0, 2).map((s, i) => <div key={s.src} className={'float-phone fp-' + i}><Device shot={s}/></div>)}
+      : phones.slice(0, p.tile === 'tall' ? 4 : 2).map((s, i) => <div key={s.src} className={'float-phone fp-' + i}><Device shot={s}/></div>)}
     {p.demo === 'room' && <span className="badge-3d">3D inside</span>}
   </div>
 }
