@@ -30,14 +30,14 @@ A one-page portfolio with a small 3D world. Mini Akma, a clay version of me, sit
 
 | | What | Stack |
 |---|---|---|
+| **Attendance Control** | QR + PIN roll call for Astana IT University | .NET MAUI · PostgreSQL |
+| **Zheztyrnak** | Unity horror game (team). I built the location and the map | Unity · C# |
+| **MyRoom** | One 360° photo → a 3D room | FastAPI · HorizonNet · R3F |
 | **ArnaSmart** | IoT metering + the ArnaAI assistant on a local LLM | Angular · NestJS · MongoDB · Ollama |
 | **Digital Jailay** | Livestock tracking: GPS collars, pastures, heatmap, Telegram alerts | Angular · NestJS · Flutter |
-| **Reporter** | Ops console: alert routing, AI chat logs, reports | Angular · Express · WebSocket |
 | **ArnaLight** | Smart street lighting (team product) | Angular · NestJS · Modbus |
-| **MyRoom** | One 360° photo → a 3D room | FastAPI · HorizonNet · R3F |
-| **Attendance Control** | QR + PIN roll call for Astana IT University | .NET MAUI · PostgreSQL |
+| **Reporter** | Ops console: alert routing, AI chat logs, reports | Angular · Express · WebSocket |
 | **Agriprom** | Agritech catalogue and dashboards | Next.js · Recharts |
-| **Zheztyrnak** | Unity horror game (team). I built the location and the map | Unity · C# |
 
 ## Run it
 

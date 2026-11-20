@@ -38,6 +38,62 @@ const m = (src: string, alt: string, label: string, source: Provenance, h = 1298
 
 export const projects: Project[] = [
   {
+    id: 'attendance', name: 'Attendance Control', kicker: 'University app', year: '2024 – 25', accent: 'cherry', tile: 'tall',
+    oneLiner: 'Roll call without paper: scan the room’s QR, type the lesson PIN, done.',
+    what: 'A cross-platform .NET MAUI app for Astana IT University. Teachers open a lesson, students prove they are in the room, everyone gets statistics.',
+    mine: [
+      'Built the app, the PostgreSQL model and the QR + PIN verification flow.',
+      'Worked with the university administration and rolled it into the teaching process.'
+    ],
+    spark: 'The QR proves the room, a short PIN proves the moment. The CV version adds geolocation; the code I reviewed uses QR, PIN and campus Wi-Fi.',
+    stack: ['.NET MAUI', 'C#', 'PostgreSQL', 'ZXing'],
+    demo: 'attendance',
+    shots: [
+      m(asset('/media/work/attendance-signin.webp'), 'Attendance Control sign-in with the Astana IT University logo and a teacher or student switch', 'Sign-in', 'recon'),
+      m(asset('/media/work/attendance-lesson.webp'), 'Teacher view of an open lesson with the room QR code and a four-digit PIN', 'Teacher: open lesson', 'recon'),
+      m(asset('/media/work/attendance-checkin.webp'), 'Student check-in after scanning the room code, entering the lesson PIN', 'Student: check in', 'recon'),
+      m(asset('/media/work/attendance-stats.webp'), 'Attendance statistics with a weekly line chart and a present, late and absent donut', 'Statistics', 'recon')
+    ],
+    links: []
+  },
+  {
+    id: 'zheztyrnak', name: 'Zheztyrnak', kicker: 'Unity horror game', year: '2024', accent: 'lilac', tile: 'square',
+    oneLiner: 'A night village, a flashlight and five runes before Zheztyrnak finds you.',
+    what: 'A first-person horror game in Unity built around Zheztyrnak, the copper-clawed witch from Kazakh folklore. You walk through a dark aul and the forest behind it with a flashlight and collect five runes.',
+    mine: [
+      'Built the location: the terrain, the village houses, the overgrown yards and the forest edge.',
+      'Laid out the map so the five runes sit along one route through the village and the forest.',
+      'Tuned the night: dark scenes, cold window light and grass thick enough to hide things.'
+    ],
+    spark: 'Most of the fear comes from the map: tall weeds right at eye level, a flashlight circle and lit windows you never reach.',
+    stack: ['Unity', 'C#', 'Terrain tools'],
+    team: 'Team project. My part was the location and the map.',
+    linksNote: 'No public build here. The screens are from the game itself.',
+    shots: [
+      g(asset('/media/work/zhez-house.webp'), 'Night village yard in the flashlight beam, a house with lit blue windows and the line about finding all five runes', 'The village', 636),
+      g(asset('/media/work/zhez-forest.webp'), 'Dark pine forest at the edge of the village with one lit window far away', 'Forest edge', 639),
+      g(asset('/media/work/zhez-rune.webp'), 'A carved rune stone in tall grass under the flashlight', 'Rune in the grass', 642),
+      g(asset('/media/work/zhez-monster.webp'), 'Zheztyrnak jump scare: a pale creature with a wide toothed mouth', 'Zheztyrnak', 644),
+      {src: asset('/media/work/zhez-buildnight.webp'), alt: 'Late night in bed with a laptop open on the Unity terrain editor', w: 960, h: 1280, device: 'photo', label: 'Building the map at night', source: 'photo'}
+    ],
+    links: []
+  },
+  {
+    id: 'myroom', name: 'MyRoom', kicker: 'Panorama → 3D room', year: '2025', accent: 'peach', tile: 'square',
+    oneLiner: 'Take one 360° photo of your room. Get a 3D room you can orbit and furnish.',
+    what: 'A FastAPI + React app: a layout network reads the room’s shape from a panorama, Python turns it into geometry, and React Three Fiber renders it in the browser.',
+    mine: [
+      'FastAPI backend with uploads and background tasks.',
+      'Pipeline from HorizonNet / DMH-Net output to room.json (floor polygon + height) and an OBJ mesh.',
+      'Rule-based furniture placement (centroid, longest wall) and the React Three Fiber viewer.'
+    ],
+    spark: 'The AI half and the 3D half only share a tiny file: corners in metres and one height. Try it below with the repo’s real data.',
+    stack: ['FastAPI', 'Python', 'HorizonNet / DMH-Net', 'React', 'React Three Fiber'],
+    demo: 'room',
+    shots: [{src: asset('/media/work/myroom-panorama-2k.webp'), alt: 'Equirectangular 360° panorama of an empty room with a window', w: 2048, h: 1024, device: 'laptop', label: 'Sample input panorama from the repo', source: 'materials'}],
+    links: [{label: 'GitHub', href: 'https://github.com/arynttai/myroom'}]
+  },
+  {
     id: 'arnasmart', name: 'ArnaSmart', kicker: 'IoT metering + AI assistant', year: '2026', accent: 'sky', tile: 'wide',
     oneLiner: 'Smart water, gas and heat metering for utilities, with an AI assistant that answers questions about the devices.',
     what: 'ArnaSmart is Freedom Satellite’s IoT platform for utility meters on LoRaWAN and NB-IoT. Operators manage cities, buildings, apartments and devices on a map and react to alarms.',
@@ -85,26 +141,6 @@ export const projects: Project[] = [
     links: [{label: 'djailay.astel.kz', href: 'https://djailay.astel.kz', note: 'Has a public demo: “Войти в demo”'}]
   },
   {
-    id: 'reporter', name: 'Reporter', kicker: 'Ops console for IoT products', year: '2026', accent: 'lilac', tile: 'square',
-    oneLiner: 'The team’s back office: who gets which alert in Telegram, what the AI said, and which import went wrong.',
-    what: 'Reporter is the internal console around ArnaSmart, Digital Jailay and the lighting product: user activity, CRUD logs, reports, Telegram alert routing and AI chat logs.',
-    mine: [
-      'Telegram management: alerts, actions and subscribers, with role rules and alert restoration.',
-      'Digital Jailay Telegram logs with filters and a responsive layout.',
-      'AI chat logs: conversation lists, presets, pagination and average response time.',
-      'Report downloads in CSV and XLSX for import jobs.'
-    ],
-    spark: 'One place that watches several products at once over WebSocket, so support sees problems before users write.',
-    stack: ['Angular 19', 'Express 5', 'MongoDB', 'WebSocket', 'Telegram'],
-    team: 'Internal team tool. ~160 of my commits, Apr–Nov 2026.',
-    shots: [
-      d(asset('/media/work/reporter-telegram.webp'), 'Reporter Telegram management: alert types, sources, subscribers and on/off status', 'Telegram management', 'recon'),
-      d(asset('/media/work/reporter-ailogs.webp'), 'Reporter AI request logs with average response time and an open conversation', 'AI request logs', 'recon'),
-      d(asset('/media/work/reporter-login.webp'), 'Reporter sign-in card on a grey gradient', 'Sign-in, reporter.astel.kz', 'live')
-    ],
-    links: [{label: 'reporter.astel.kz', href: 'https://reporter.astel.kz', note: 'Internal, sign-in only'}]
-  },
-  {
     id: 'arnalight', name: 'ArnaLight', kicker: 'Smart street lighting', year: '2026', accent: 'butter', tile: 'tall',
     oneLiner: 'Street-light cabinets, lines and 300 luminaires on one map, with schedules, commands and alarms.',
     what: 'ArnaLight controls city street lighting: cabinets (ШУНО), lighting lines and luminaires, power consumption, schedules, a command log and alarms. The public demo runs on demonstration data.',
@@ -125,38 +161,24 @@ export const projects: Project[] = [
     links: [{label: 'testiot.astel.kz', href: 'https://testiot.astel.kz', note: 'Test environment, press “Демо”'}]
   },
   {
-    id: 'myroom', name: 'MyRoom', kicker: 'Panorama → 3D room', year: '2025', accent: 'peach', tile: 'square',
-    oneLiner: 'Take one 360° photo of your room. Get a 3D room you can orbit and furnish.',
-    what: 'A FastAPI + React app: a layout network reads the room’s shape from a panorama, Python turns it into geometry, and React Three Fiber renders it in the browser.',
+    id: 'reporter', name: 'Reporter', kicker: 'Ops console for IoT products', year: '2026', accent: 'lilac', tile: 'square',
+    oneLiner: 'The team’s back office: who gets which alert in Telegram, what the AI said, and which import went wrong.',
+    what: 'Reporter is the internal console around ArnaSmart, Digital Jailay and the lighting product: user activity, CRUD logs, reports, Telegram alert routing and AI chat logs.',
     mine: [
-      'FastAPI backend with uploads and background tasks.',
-      'Pipeline from HorizonNet / DMH-Net output to room.json (floor polygon + height) and an OBJ mesh.',
-      'Rule-based furniture placement (centroid, longest wall) and the React Three Fiber viewer.'
+      'Telegram management: alerts, actions and subscribers, with role rules and alert restoration.',
+      'Digital Jailay Telegram logs with filters and a responsive layout.',
+      'AI chat logs: conversation lists, presets, pagination and average response time.',
+      'Report downloads in CSV and XLSX for import jobs.'
     ],
-    spark: 'The AI half and the 3D half only share a tiny file: corners in metres and one height. Try it below with the repo’s real data.',
-    stack: ['FastAPI', 'Python', 'HorizonNet / DMH-Net', 'React', 'React Three Fiber'],
-    demo: 'room',
-    shots: [{src: asset('/media/work/myroom-panorama-2k.webp'), alt: 'Equirectangular 360° panorama of an empty room with a window', w: 2048, h: 1024, device: 'laptop', label: 'Sample input panorama from the repo', source: 'materials'}],
-    links: [{label: 'GitHub', href: 'https://github.com/arynttai/myroom'}]
-  },
-  {
-    id: 'attendance', name: 'Attendance Control', kicker: 'University app', year: '2024 – 25', accent: 'cherry', tile: 'tall',
-    oneLiner: 'Roll call without paper: scan the room’s QR, type the lesson PIN, done.',
-    what: 'A cross-platform .NET MAUI app for Astana IT University. Teachers open a lesson, students prove they are in the room, everyone gets statistics.',
-    mine: [
-      'Built the app, the PostgreSQL model and the QR + PIN verification flow.',
-      'Worked with the university administration and rolled it into the teaching process.'
-    ],
-    spark: 'The QR proves the room, a short PIN proves the moment. The CV version adds geolocation; the code I reviewed uses QR, PIN and campus Wi-Fi.',
-    stack: ['.NET MAUI', 'C#', 'PostgreSQL', 'ZXing'],
-    demo: 'attendance',
+    spark: 'One place that watches several products at once over WebSocket, so support sees problems before users write.',
+    stack: ['Angular 19', 'Express 5', 'MongoDB', 'WebSocket', 'Telegram'],
+    team: 'Internal team tool. ~160 of my commits, Apr–Nov 2026.',
     shots: [
-      m(asset('/media/work/attendance-signin.webp'), 'Attendance Control sign-in with the Astana IT University logo and a teacher or student switch', 'Sign-in', 'recon'),
-      m(asset('/media/work/attendance-lesson.webp'), 'Teacher view of an open lesson with the room QR code and a four-digit PIN', 'Teacher: open lesson', 'recon'),
-      m(asset('/media/work/attendance-checkin.webp'), 'Student check-in after scanning the room code, entering the lesson PIN', 'Student: check in', 'recon'),
-      m(asset('/media/work/attendance-stats.webp'), 'Attendance statistics with a weekly line chart and a present, late and absent donut', 'Statistics', 'recon')
+      d(asset('/media/work/reporter-telegram.webp'), 'Reporter Telegram management: alert types, sources, subscribers and on/off status', 'Telegram management', 'recon'),
+      d(asset('/media/work/reporter-ailogs.webp'), 'Reporter AI request logs with average response time and an open conversation', 'AI request logs', 'recon'),
+      d(asset('/media/work/reporter-login.webp'), 'Reporter sign-in card on a grey gradient', 'Sign-in, reporter.astel.kz', 'live')
     ],
-    links: []
+    links: [{label: 'reporter.astel.kz', href: 'https://reporter.astel.kz', note: 'Internal, sign-in only'}]
   },
   {
     id: 'agriprom', name: 'Agriprom', kicker: 'Agritech platform', year: '2025', accent: 'mint', tile: 'square',
@@ -173,28 +195,6 @@ export const projects: Project[] = [
       d(asset('/media/work/agri-home.webp'), 'Agriprom home page: European solutions for cow comfort in Kazakhstan', 'Home', 'local'),
       d(asset('/media/work/agri-catalog.webp'), 'Agriprom product catalogue with category sidebar', 'Catalogue', 'local'),
       d(asset('/media/work/agri-search.webp'), 'Agriprom catalogue filtered by the search term brush', 'Search', 'local')
-    ],
-    links: []
-  },
-  {
-    id: 'zheztyrnak', name: 'Zheztyrnak', kicker: 'Unity horror game', year: '2024', accent: 'lilac', tile: 'square',
-    oneLiner: 'A night village, a flashlight and five runes before Zheztyrnak finds you.',
-    what: 'A first-person horror game in Unity built around Zheztyrnak, the copper-clawed witch from Kazakh folklore. You walk through a dark aul and the forest behind it with a flashlight and collect five runes.',
-    mine: [
-      'Built the location: the terrain, the village houses, the overgrown yards and the forest edge.',
-      'Laid out the map so the five runes sit along one route through the village and the forest.',
-      'Tuned the night: dark scenes, cold window light and grass thick enough to hide things.'
-    ],
-    spark: 'Most of the fear comes from the map: tall weeds right at eye level, a flashlight circle and lit windows you never reach.',
-    stack: ['Unity', 'C#', 'Terrain tools'],
-    team: 'Team project. My part was the location and the map.',
-    linksNote: 'No public build here. The screens are from the game itself.',
-    shots: [
-      g(asset('/media/work/zhez-house.webp'), 'Night village yard in the flashlight beam, a house with lit blue windows and the line about finding all five runes', 'The village', 636),
-      g(asset('/media/work/zhez-forest.webp'), 'Dark pine forest at the edge of the village with one lit window far away', 'Forest edge', 639),
-      g(asset('/media/work/zhez-rune.webp'), 'A carved rune stone in tall grass under the flashlight', 'Rune in the grass', 642),
-      g(asset('/media/work/zhez-monster.webp'), 'Zheztyrnak jump scare: a pale creature with a wide toothed mouth', 'Zheztyrnak', 644),
-      {src: asset('/media/work/zhez-buildnight.webp'), alt: 'Late night in bed with a laptop open on the Unity terrain editor', w: 960, h: 1280, device: 'photo', label: 'Building the map at night', source: 'photo'}
     ],
     links: []
   },
