@@ -36,6 +36,7 @@ A one-page portfolio with a small 3D world. Mini Akma, a clay version of me, sit
 | **ArnaSmart** | IoT metering + the ArnaAI assistant on a local LLM | Angular · NestJS · MongoDB · Ollama |
 | **Digital Jailay** | Livestock tracking: GPS collars, pastures, heatmap, Telegram alerts | Angular · NestJS · Flutter |
 | **ArnaLight** | Smart street lighting (team product) | Angular · NestJS · Modbus |
+| **Azura Vending** | iOS app: nearby vending machines and what is inside (team) | Swift · UIKit |
 | **Reporter** | Ops console: alert routing, AI chat logs, reports | Angular · Express · WebSocket |
 | **Agriprom** | Agritech catalogue and dashboards | Next.js · Recharts |
 

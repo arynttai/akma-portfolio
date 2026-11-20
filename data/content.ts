@@ -166,6 +166,26 @@ export const projects: Project[] = [
     links: [{label: 'testiot.astel.kz', href: 'https://testiot.astel.kz', note: 'Test environment, press “Демо”'}]
   },
   {
+    id: 'azura', name: 'Azura Vending', kicker: 'iOS app for vending machines', year: '2024', accent: 'peach', tile: 'tall',
+    oneLiner: 'Find the nearest vending machine and see what is inside before you walk there.',
+    what: 'An iOS app for a network of Azura vending machines: a map of machines around you, stock for every slot, and an account for favourites and orders.',
+    mine: [
+      'The sign-in screen in UIKit: SnapKit layout, Alamofire requests and clear error messages instead of raw server errors.',
+      'Phone verification with a PIN code field.',
+      'Request and response models for sign-in and registration.'
+    ],
+    spark: 'The whole app answers one question: is my snack still in the machine? Stock per slot tells you before you leave your desk.',
+    stack: ['Swift', 'UIKit', 'SnapKit', 'Alamofire'],
+    team: 'Student team project, 2024. My commits cover sign-in and phone verification; the map and stock screens show the product idea.',
+    shots: [
+      m(asset('/media/work/azura-map.webp'), 'Map of nearby Azura machines with item counts and a list sorted by distance', 'Nearby machines', 'concept'),
+      m(asset('/media/work/azura-stock.webp'), 'One machine with stock per slot, prices in tenge and a sold-out slot', 'What is inside', 'concept'),
+      m(asset('/media/work/azura-signin.webp'), 'Azura sign-in with the logo, login and password fields and an orange button', 'Sign-in', 'recon'),
+      m(asset('/media/work/azura-verify.webp'), 'Phone verification with a four-digit code and a resend timer', 'Phone verification', 'recon')
+    ],
+    links: []
+  },
+  {
     id: 'reporter', name: 'Reporter', kicker: 'Ops console for IoT products', year: '2026', accent: 'lilac', tile: 'square',
     oneLiner: 'The team’s back office: who gets which alert in Telegram, what the AI said, and which import went wrong.',
     what: 'Reporter is the internal console around ArnaSmart, Digital Jailay and the lighting product: user activity, CRUD logs, reports, Telegram alert routing and AI chat logs.',
@@ -188,7 +208,7 @@ export const projects: Project[] = [
     links: [{label: 'reporter.astel.kz', href: 'https://reporter.astel.kz', note: 'Internal, sign-in only'}]
   },
   {
-    id: 'agriprom', name: 'Agriprom', kicker: 'Agritech platform', year: '2025', accent: 'mint', tile: 'square',
+    id: 'agriprom', name: 'Agriprom', kicker: 'Agritech platform', year: '2025', accent: 'mint', tile: 'wide',
     oneLiner: 'A fast, findable catalogue of European dairy-farm equipment for Kazakhstan.',
     what: 'An information platform on Next.js 16 with a categorised catalogue, instant search and dashboards.',
     mine: [
@@ -215,7 +235,6 @@ export const more: More[] = [
   {name: 'Constella', what: 'Forms hackathon teams as “constellations”: cores, bridges, skill balance.', stack: 'Node.js · WebSocket · Canvas', year: '2025'},
   {name: 'Qolda', what: 'Mentors for newcomers in IT: profiles, news, messages.', stack: 'Swift · UIKit · MVVM · Firebase', year: '2024'},
   {name: 'NeoDent', what: 'Dental clinic booking: doctors, filters, calendar, history.', stack: 'Swift · UIKit · MVVM', year: '2024'},
-  {name: 'Azura Vending', what: 'Real-time vending machine monitoring. Service time −20%.', stack: 'SwiftUI', year: '2024'},
   {name: 'Music Hub', what: 'Book musicians and organise events.', stack: 'FastAPI · PostgreSQL', year: '2024', href: 'https://github.com/arynttai/music_hub', linkLabel: 'GitHub'},
   {name: 'PetHack MVP', what: 'Team lead, mobile MVP in eight hours. Won Best Mobile Application.', stack: 'Mobile', year: '2024'}
 ]
@@ -229,7 +248,7 @@ export const jobs: Job[] = [
   {when: '2024 — now', org: 'Freelance', role: 'Fullstack Developer', color: 'peach', points: ['Websites and mobile apps, MVPs for startups: architecture and REST APIs.']},
   {when: '2024 — 2025', org: 'Astana IT University', role: 'Fullstack Mobile Developer', color: 'cherry', logo: 'aitu', points: ['Attendance Control, from idea to daily use.'], projects: ['attendance']},
   {when: '2024 — 2025', org: 'IT Step Academy', role: 'Teacher & mentor', color: 'butter', points: ['OOP in C++ and Java, mobile and web development, AI basics.']},
-  {when: '2024', org: 'Azura Vending', role: 'Fullstack Mobile Developer', color: 'lilac', points: ['SwiftUI app for real-time machine monitoring. Service time −20%.']}
+  {when: '2024', org: 'Azura Vending', role: 'Fullstack Mobile Developer', color: 'lilac', points: ['SwiftUI app for real-time machine monitoring. Service time −20%.'], projects: ['azura']}
 ]
 
 export type Win = {title: string; meta: string; cert?: string}
