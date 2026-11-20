@@ -482,7 +482,7 @@ html[data-theme=dark] .orbit-stage { background: radial-gradient(circle at 50% 4
 html[data-theme=dark] .orbit-center-label, html[data-theme=dark] .scene-tag { background: rgba(29, 25, 20, .9); }
 html[data-theme=dark] .logo-freedom .on-light { display: none; }
 html[data-theme=dark] .logo-freedom .on-dark { display: inline; }
-html[data-theme=dark] .logo-aitu { background: #f4eee3; border-radius: 10px; padding: 6px 8px; }
+html[data-theme=dark] .logo-aitu { filter: invert(1) hue-rotate(180deg) brightness(1.15); }
 html[data-theme=dark] .why { background: #0d0b08; border: 1.5px solid var(--line); }
 html[data-theme=dark] .contact-card { background: linear-gradient(135deg, #3a1f25, #36231a 50%, #33290f); }
 html[data-theme=dark] .device-laptop .device-frame { border-color: rgba(244, 238, 227, .25); }
