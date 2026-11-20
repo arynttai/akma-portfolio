@@ -98,14 +98,17 @@ export const projects: Project[] = [
     oneLiner: 'Smart water, gas and heat metering for utilities, with an AI assistant that answers questions about the devices.',
     what: 'ArnaSmart is Freedom Satellite’s IoT platform for utility meters on LoRaWAN and NB-IoT. Operators manage cities, buildings, apartments and devices on a map and react to alarms.',
     mine: [
-      'Built ArnaAI: an assistant on a local LLM (Ollama) with a knowledge base, language detection, intent resolution and chat that knows device telemetry and alarms.',
-      'Designed the ArnaAI mascot panel in the Angular client: resizable, docks itself on mobile so it never blocks scrolling.',
-      'Made the client work on phones: responsive layout, fixed header and footer with safe-area support, scrollable device tables.',
-      'Added a forced temporary-password flow with guards on the NestJS API.'
+      'ArnaAI: an assistant on a local LLM (Ollama) with a knowledge base built from the docs, language detection, intent resolution and a chat that knows device telemetry and alarms.',
+      'The ArnaAI mascot panel: presets, hints, resizing, and docking on mobile so it never blocks scrolling.',
+      'The map on MapLibre: clustering, filters, popups with device details and address search.',
+      'Real-time alarms over WebSocket: a badge with unaccepted alarms and accepting them in bulk.',
+      'NestJS endpoints for meters, modems, telemetry and water balance, the city → district → building hierarchy, and reports filtered by address.',
+      'System admin: user import from Excel, daily backups, CRUD logs and a forced password change.',
+      'Mobile layout and light / dark theme tokens for the Angular client.'
     ],
     spark: 'The assistant answers from the product’s own documentation, chunked and indexed, and logs response time for every reply. Reporter shows those logs to the team.',
     stack: ['Angular 20', 'NestJS', 'MongoDB', 'Ollama LLM', 'MQTT', 'MapLibre'],
-    team: 'Team product at Freedom Cloud Holding Ltd. ~100 of my commits, Jul–Sep 2026.',
+    team: 'Team product at Freedom Cloud Holding Ltd. About 300 of my commits, Apr–Sep 2026.',
     demo: 'arnaai',
     shots: [
       d(asset('/media/work/arnasmart-map.webp'), 'ArnaSmart map with object tree, meter clusters and the ArnaAI panel with analytic presets', 'Map + ArnaAI presets', 'recon'),
@@ -122,14 +125,16 @@ export const projects: Project[] = [
     oneLiner: 'Where are my horses? GPS collars, pastures, a heatmap of where the herd grazes, and a Telegram bot for alerts.',
     what: 'Digital Jailay (internally AgroLink) helps farmers track animals with GPS collars: a farm dashboard, pasture boundaries, a grazing heatmap, animal cards and alerts for lost signal or low battery.',
     mine: [
-      'Built the heatmap with a legend and the map with base layers and the user’s own location.',
-      'Built animal management: cards, forms with photos and weight, tasks, attention filters for offline and low-battery collars.',
-      'Connected Telegram: web-app login with one-time codes, a monitoring module and audit logs.',
-      'Wrote a Bluetooth GATT bridge on Android for the Flutter app, and shaped the public demo mode.'
+      'The grazing heatmap with a legend, and the map with base layers, the user’s location and last known points.',
+      'Animals: cards, forms with photos and weight, tasks, tracking on the map and attention filters.',
+      'Pastures and geo fences: drawing, editing and deleting them on the map.',
+      'Telegram: web-app login with one-time codes, alert delivery, and a bot monitoring module with heartbeat and audit logs.',
+      'Push notifications with Firebase, and a Bluetooth GATT bridge on Android for the Flutter app.',
+      'The public demo mode: seeded users and animals, sessions and access guards.'
     ],
     spark: 'A farmer can log in from Telegram with a one-time code and get collar alerts there, without installing anything new.',
-    stack: ['Angular 22', 'NestJS', 'MongoDB', 'Flutter', 'Android BLE', 'MapLibre', 'Telegram Bot API'],
-    team: 'Team product at Freedom Cloud Holding Ltd. ~100 of my commits, Sep–Nov 2026.',
+    stack: ['Angular 22', 'NestJS', 'MongoDB', 'Flutter', 'Android BLE', 'Firebase', 'MapLibre', 'Telegram Bot API'],
+    team: 'Team product at Freedom Cloud Holding Ltd. About 75 of my commits, Sep–Nov 2026.',
     shots: [
       d(asset('/media/work/djailay-map.webp'), 'Digital Jailay map with pasture polygons and animal markers on satellite imagery', 'Pastures and animals', 'demo'),
       d(asset('/media/work/djailay-heatmap.webp'), 'Digital Jailay grazing heatmap over pastures', 'Grazing heatmap', 'demo'),
@@ -166,13 +171,15 @@ export const projects: Project[] = [
     what: 'Reporter is the internal console around ArnaSmart, Digital Jailay and the lighting product: user activity, CRUD logs, reports, Telegram alert routing and AI chat logs.',
     mine: [
       'Telegram management: alerts, actions and subscribers, with role rules and alert restoration.',
-      'Digital Jailay Telegram logs with filters and a responsive layout.',
-      'AI chat logs: conversation lists, presets, pagination and average response time.',
-      'Report downloads in CSV and XLSX for import jobs.'
+      'Geocoding: a worker that cleans up addresses, finds coordinates inside Kazakhstan and lets you fix them by hand on a MapLibre map.',
+      'Integration monitoring: last sent and failed data per user, colour-coded, with search and sorting.',
+      'Logs: AI chat logs with response time, CRUD and action logs, Digital Jailay Telegram logs.',
+      'Deleted-user backups with restore, and import job reports in CSV and XLSX.',
+      'Mobile layout and the light / dark theme.'
     ],
-    spark: 'One place that watches several products at once over WebSocket, so support sees problems before users write.',
-    stack: ['Angular 19', 'Express 5', 'MongoDB', 'WebSocket', 'Telegram'],
-    team: 'Internal team tool. ~160 of my commits, Apr–Nov 2026.',
+    spark: 'Addresses arrive in any shape. The geocoder normalises them, groups devices by address and keeps only results inside Kazakhstan.',
+    stack: ['Angular 19', 'Express 5', 'MongoDB', 'MapLibre', 'Telegram Bot API'],
+    team: 'Internal team tool. About 135 of my commits, Apr–Nov 2026.',
     shots: [
       d(asset('/media/work/reporter-telegram.webp'), 'Reporter Telegram management: alert types, sources, subscribers and on/off status', 'Telegram management', 'recon'),
       d(asset('/media/work/reporter-ailogs.webp'), 'Reporter AI request logs with average response time and an open conversation', 'AI request logs', 'recon'),
@@ -216,7 +223,7 @@ export const more: More[] = [
 export type Job = {when: string; org: string; role: string; color: string; points: string[]; projects?: string[]; logo?: 'freedom' | 'aitu'}
 export const jobs: Job[] = [
   {when: 'Apr 2026 — now', org: 'Freedom Cloud Holding Ltd.', role: 'Software Engineer', color: 'sky', logo: 'freedom',
-    points: ['AI assistant ArnaAI and mobile layout for ArnaSmart.', 'Digital Jailay: heatmap, animals, Telegram login and alerts, Android BLE bridge.', 'Reporter: Telegram alert routing, AI chat logs, reports.'],
+    points: ['ArnaSmart: the ArnaAI assistant, the map, real-time alarms, NestJS endpoints and admin tools.', 'Digital Jailay: heatmap, animals, geo fences, Telegram and push alerts, Android BLE bridge.', 'Reporter: Telegram alert routing, geocoding, integration monitoring and logs.'],
     projects: ['arnasmart', 'djailay', 'reporter', 'arnalight']},
   {when: '2025 — now', org: 'Agriprom.kz', role: 'Fullstack Developer · remote', color: 'mint', points: ['Next.js 16 platform, Recharts dashboards, SEO, read-only refactor.'], projects: ['agriprom']},
   {when: '2024 — now', org: 'Freelance', role: 'Fullstack Developer', color: 'peach', points: ['Websites and mobile apps, MVPs for startups: architecture and REST APIs.']},
