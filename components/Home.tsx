@@ -97,7 +97,7 @@ export default function Home() {
 
     <div className="home-stage">
       <figure className="polaroid irl" aria-label="Real photo">
-        <img src={asset('/media/portraits/profile-small.webp')} alt="Akmaral in profile, white shirt and burgundy tie, dark studio background" width={600} height={900} fetchPriority="high"/>
+        <img src={asset('/media/portraits/tilt-small.webp')} alt="Akmaral tilting her head, white shirt, wine tie and red roses, dark studio background" width={600} height={900} fetchPriority="high"/>
         <figcaption>the real one</figcaption>
       </figure>
       <div className="scene">
