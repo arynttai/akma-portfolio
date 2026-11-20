@@ -37,6 +37,7 @@ A one-page portfolio with a small 3D world. Mini Akma, a clay version of me, sit
 | **MyRoom** | One 360° photo → a 3D room | FastAPI · HorizonNet · R3F |
 | **Attendance Control** | QR + PIN roll call for Astana IT University | .NET MAUI · PostgreSQL |
 | **Agriprom** | Agritech catalogue and dashboards | Next.js · Recharts |
+| **Zheztyrnak** | Unity horror game (team). I built the location and the map | Unity · C# |
 
 ## Run it
 

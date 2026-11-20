@@ -1,15 +1,16 @@
 import {asset} from '@/lib/base'
-export type Provenance = 'live' | 'demo' | 'local' | 'materials' | 'concept' | 'recon'
+export type Provenance = 'live' | 'demo' | 'local' | 'materials' | 'concept' | 'recon' | 'photo'
 export const provenanceText: Record<Provenance, string> = {
   live: 'Public page of the live product',
   demo: 'Real product, public demo mode with demo data',
   local: 'Real app, run locally',
   materials: 'From project materials',
   concept: 'Concept illustration',
-  recon: 'Recreated from the source code with demo data, not a screenshot'
+  recon: 'Recreated from the source code with demo data, not a screenshot',
+  photo: 'Real photo'
 }
 
-export type Shot = {src: string; alt: string; w: number; h: number; device: 'laptop' | 'phone'; label: string; source: Provenance}
+export type Shot = {src: string; alt: string; w: number; h: number; device: 'laptop' | 'phone' | 'photo'; label: string; source: Provenance}
 export type LinkOut = {label: string; href: string; note?: string}
 
 export type Project = {
@@ -28,9 +29,11 @@ export type Project = {
   links: LinkOut[]
   team?: string
   demo?: 'room' | 'attendance' | 'arnaai'
+  linksNote?: string
 }
 
 const d = (src: string, alt: string, label: string, source: Provenance): Shot => ({src, alt, w: 1440, h: 900, device: 'laptop', label, source})
+const g = (src: string, alt: string, label: string, h: number): Shot => ({src, alt, w: 1268, h, device: 'laptop', label, source: 'materials'})
 const m = (src: string, alt: string, label: string, source: Provenance, h = 1298, w = 600): Shot => ({src, alt, w, h, device: 'phone', label, source})
 
 export const projects: Project[] = [
@@ -170,6 +173,28 @@ export const projects: Project[] = [
       d(asset('/media/work/agri-home.webp'), 'Agriprom home page: European solutions for cow comfort in Kazakhstan', 'Home', 'local'),
       d(asset('/media/work/agri-catalog.webp'), 'Agriprom product catalogue with category sidebar', 'Catalogue', 'local'),
       d(asset('/media/work/agri-search.webp'), 'Agriprom catalogue filtered by the search term brush', 'Search', 'local')
+    ],
+    links: []
+  },
+  {
+    id: 'zheztyrnak', name: 'Zheztyrnak', kicker: 'Unity horror game', year: '2024', accent: 'lilac', tile: 'square',
+    oneLiner: 'A night village, a flashlight and five runes before Zheztyrnak finds you.',
+    what: 'A first-person horror game in Unity built around Zheztyrnak, the copper-clawed witch from Kazakh folklore. You walk through a dark aul and the forest behind it with a flashlight and collect five runes.',
+    mine: [
+      'Built the location: the terrain, the village houses, the overgrown yards and the forest edge.',
+      'Laid out the map so the five runes sit along one route through the village and the forest.',
+      'Tuned the night: dark scenes, cold window light and grass thick enough to hide things.'
+    ],
+    spark: 'Most of the fear comes from the map: tall weeds right at eye level, a flashlight circle and lit windows you never reach.',
+    stack: ['Unity', 'C#', 'Terrain tools'],
+    team: 'Team project. My part was the location and the map.',
+    linksNote: 'No public build here. The screens are from the game itself.',
+    shots: [
+      g(asset('/media/work/zhez-house.webp'), 'Night village yard in the flashlight beam, a house with lit blue windows and the line about finding all five runes', 'The village', 636),
+      g(asset('/media/work/zhez-forest.webp'), 'Dark pine forest at the edge of the village with one lit window far away', 'Forest edge', 639),
+      g(asset('/media/work/zhez-rune.webp'), 'A carved rune stone in tall grass under the flashlight', 'Rune in the grass', 642),
+      g(asset('/media/work/zhez-monster.webp'), 'Zheztyrnak jump scare: a pale creature with a wide toothed mouth', 'Zheztyrnak', 644),
+      {src: asset('/media/work/zhez-buildnight.webp'), alt: 'Late night in bed with a laptop open on the Unity terrain editor', w: 960, h: 1280, device: 'photo', label: 'Building the map at night', source: 'photo'}
     ],
     links: []
   },

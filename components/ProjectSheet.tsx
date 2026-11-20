@@ -59,7 +59,7 @@ function Sheet({p, onClose}: {p: Project; onClose: () => void}) {
       <section><h3>Stack</h3><p className="pills">{p.stack.map(s => <span key={s}>{s}</span>)}</p></section>
       <section><h3>Links</h3>
         {p.links.length ? <ul className="out-links">{p.links.map(l => <li key={l.href}><a href={l.href} target="_blank" rel="noreferrer"><Icon name="arrow" size={15}/>{l.label}</a>{l.note && <small>{l.note}</small>}</li>)}</ul>
-          : <p className="muted">Private repository. Happy to walk through the code on a call.</p>}
+          : <p className="muted">{p.linksNote ?? 'Private repository. Happy to walk through the code on a call.'}</p>}
       </section>
     </div>
     <footer className="sheet-foot">

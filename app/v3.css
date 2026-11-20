@@ -42,3 +42,9 @@ html[data-theme=dark] .scene { background: radial-gradient(circle, rgba(244, 238
 .cert-thumb { grid-row: span 2; display: block; width: 96px; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; border: 1.5px solid var(--line-2); background: #fff; transition: transform .25s var(--ease), box-shadow .25s; }
 .cert-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .cert-thumb:hover { transform: rotate(-2deg) scale(1.04); box-shadow: 0 10px 20px -10px rgba(60, 35, 20, .5); }
+
+/* real photo inside a project sheet */
+.device-photo .device-frame { border-radius: 18px; overflow: hidden; box-shadow: 0 20px 34px -18px rgba(30, 20, 15, .55); }
+.device-photo img { width: 100%; height: auto; display: block; }
+.gallery-main .device-photo { width: min(340px, 72%); }
+.thumb-photo img { height: 64px; width: 48px; justify-self: center; }
