@@ -78,7 +78,12 @@ export default function Experience() {
       </div>
       <div className="wins">
         <h3 className="sub-title">Wins & certificates</h3>
-        <ul>{wins.map(([a, b], i) => <li key={a} className={i === 0 ? 'gold' : ''}><b>{a}</b><span>{b}</span></li>)}</ul>
+        <ul>{wins.map((w, i) => <li key={w.title} className={(i === 0 ? 'gold' : '') + (w.cert ? ' has-cert' : '')}>
+          {w.cert && <a className="cert-thumb" href={asset(`/media/certs/${w.cert}.webp`)} target="_blank" rel="noreferrer" aria-label={`Open certificate: ${w.title}`} data-cursor="View">
+            <img src={asset(`/media/certs/${w.cert}-thumb.webp`)} alt={`Certificate: ${w.title}`} width={520} height={367} loading="lazy"/>
+          </a>}
+          <b>{w.title}</b><span>{w.meta}</span>
+        </li>)}</ul>
       </div>
     </div>
   </section>

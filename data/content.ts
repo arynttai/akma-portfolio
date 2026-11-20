@@ -183,7 +183,7 @@ export const more: More[] = [
   {name: 'NeoDent', what: 'Dental clinic booking: doctors, filters, calendar, history.', stack: 'Swift · UIKit · MVVM', year: '2024'},
   {name: 'Azura Vending', what: 'Real-time vending machine monitoring. Service time −20%.', stack: 'SwiftUI', year: '2024'},
   {name: 'Music Hub', what: 'Book musicians and organise events.', stack: 'FastAPI · PostgreSQL', year: '2024', href: 'https://github.com/arynttai/music_hub', linkLabel: 'GitHub'},
-  {name: 'PetHack MVP', what: 'Team lead, mobile MVP in eight hours. Won Best Mobile Developer.', stack: 'Mobile', year: '2024'}
+  {name: 'PetHack MVP', what: 'Team lead, mobile MVP in eight hours. Won Best Mobile Application.', stack: 'Mobile', year: '2024'}
 ]
 
 export type Job = {when: string; org: string; role: string; color: string; points: string[]; projects?: string[]; logo?: 'freedom' | 'aitu'}
@@ -198,13 +198,15 @@ export const jobs: Job[] = [
   {when: '2024', org: 'Azura Vending', role: 'Fullstack Mobile Developer', color: 'lilac', points: ['SwiftUI app for real-time machine monitoring. Service time −20%.']}
 ]
 
-export const wins = [
-  ['Winner, Best Mobile Developer', 'PetHack by GDG · 2024'],
-  ['Participant, Generative AI', 'nFactorial LLM Cup · 2024'],
-  ['Develop in Swift', 'Apple Authorised Training Centre'],
-  ['iOS Development', 'IT Step Academy'],
-  ['Android Development', 'Samsung Innovation Campus'],
-  ['Agile & data-driven BI', 'Beeline Bootcamp · 2024']
+export type Win = {title: string; meta: string; cert?: string}
+export const wins: Win[] = [
+  {title: 'Winner, Best Mobile Application', meta: 'PetHack by GDG & Neobook · 2024', cert: 'pethack'},
+  {title: '3rd place, Web Development Hackathon', meta: 'Code Girl Summer · NU ACM-W · 2023', cert: 'nu-code-girl'},
+  {title: 'Develop in Swift', meta: 'Apple Authorised Training · Astana Hub · 2024', cert: 'apple'},
+  {title: 'Application development for iOS', meta: 'IT Step Academy · 2023 — 2024 · excellent', cert: 'itstep'},
+  {title: 'Mobile Application Development', meta: 'Samsung Innovation Campus · 2022 — 2023', cert: 'samsung'},
+  {title: 'Participant, Generative AI', meta: 'nFactorial LLM Cup · 2024'},
+  {title: 'Agile & data-driven BI', meta: 'Beeline Bootcamp · 2024'}
 ]
 
 export const skills: [string, string[]][] = [
