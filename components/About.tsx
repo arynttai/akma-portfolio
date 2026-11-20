@@ -68,7 +68,7 @@ export default function About() {
         <h3 className="sub-title">Education</h3>
         <AituLogo/>
         <ul>
-          <li><b>College: Software Developer diploma</b><span>Astana IT University · 2022 — 2025 · GPA 3.8</span></li>
+          <li><b>College: Software Developer diploma</b><span>Astana IT University · GPA 3.8</span></li>
           <li><b>BSc Software Engineering</b><span>Astana IT University · 2025 — 2028 · GPA 3.5</span></li>
         </ul>
       </div>
