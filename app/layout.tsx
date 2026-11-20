@@ -7,6 +7,7 @@ import '@fontsource/ibm-plex-mono/latin-400.css'
 import '@fontsource/instrument-serif/latin-400-italic.css'
 import './globals.css'
 import './v3.css'
+import Sky from '@/components/Sky'
 
 const origin = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL : undefined)
 const title = 'Akmaral Aryntay — Software Engineer, Astana'
@@ -35,6 +36,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <script dangerouslySetInnerHTML={{__html: "document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t}catch(e){}"}}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}/>
     </head>
-    <body><a className="skip" href="#main">Skip to content</a>{children}</body>
+    <body><Sky/><a className="skip" href="#main">Skip to content</a>{children}</body>
   </html>
 }
