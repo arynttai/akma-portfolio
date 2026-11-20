@@ -148,8 +148,10 @@ export const projects: Project[] = [
     stack: ['.NET MAUI', 'C#', 'PostgreSQL', 'ZXing'],
     demo: 'attendance',
     shots: [
-      m(asset('/media/work/attendance-login.webp'), 'Attendance Control sign-in with Astana IT University logo and a teacher or student choice', 'Sign-in', 'materials', 896, 404),
-      m(asset('/media/work/attendance-statistics.webp'), 'Attendance statistics with a line chart and a present, late and absent pie chart', 'Statistics', 'materials', 768, 346)
+      m(asset('/media/work/attendance-signin.webp'), 'Attendance Control sign-in with the Astana IT University logo and a teacher or student switch', 'Sign-in', 'recon'),
+      m(asset('/media/work/attendance-lesson.webp'), 'Teacher view of an open lesson with the room QR code and a four-digit PIN', 'Teacher: open lesson', 'recon'),
+      m(asset('/media/work/attendance-checkin.webp'), 'Student check-in after scanning the room code, entering the lesson PIN', 'Student: check in', 'recon'),
+      m(asset('/media/work/attendance-stats.webp'), 'Attendance statistics with a weekly line chart and a present, late and absent donut', 'Statistics', 'recon')
     ],
     links: []
   },

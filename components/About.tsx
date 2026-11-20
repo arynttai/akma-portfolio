@@ -96,7 +96,6 @@ export function Contact() {
     </div>
     <footer className="footer">
       <span>Akmaral Aryntay · Astana · 2026</span>
-      <span>Next.js · React Three Fiber · Web Audio. Photos are real; Mini Akma is a 3D sketch of me.</span>
       <a href="#home">Back to top ↑</a>
     </footer>
   </section>
