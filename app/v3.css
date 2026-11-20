@@ -40,5 +40,5 @@ html[data-theme=dark] .scene { background: radial-gradient(circle, rgba(244, 238
 .wins li.has-cert { grid-template-columns: 96px 1fr; column-gap: 14px; align-items: center; }
 .wins li.has-cert b, .wins li.has-cert span { grid-column: 2; }
 .cert-thumb { grid-row: span 2; display: block; width: 96px; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; border: 1.5px solid var(--line-2); background: #fff; transition: transform .25s var(--ease), box-shadow .25s; }
-.cert-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cert-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .cert-thumb:hover { transform: rotate(-2deg) scale(1.04); box-shadow: 0 10px 20px -10px rgba(60, 35, 20, .5); }

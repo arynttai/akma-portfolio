@@ -206,7 +206,7 @@ export const wins: Win[] = [
   {title: 'Application development for iOS', meta: 'IT Step Academy · 2023 — 2024 · excellent', cert: 'itstep'},
   {title: 'Mobile Application Development', meta: 'Samsung Innovation Campus · 2022 — 2023', cert: 'samsung'},
   {title: 'Participant, Generative AI', meta: 'nFactorial LLM Cup · 2024'},
-  {title: 'Agile & data-driven BI', meta: 'Beeline Bootcamp · 2024'}
+  {title: 'Lego Scrum & Data Driven BI', meta: 'Beeline Bootcamp · 2024', cert: 'beeline'}
 ]
 
 export const skills: [string, string[]][] = [
