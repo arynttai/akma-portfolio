@@ -14,11 +14,18 @@ function untilt(e: React.PointerEvent<HTMLElement>) {
 }
 
 function Visual({p}: {p: Project}) {
-  const laptop = p.shots.find(s => s.device === 'laptop')
+  const laptops = p.shots.filter(s => s.device === 'laptop')
+  const laptop = laptops[0]
   const phones = p.shots.filter(s => s.device === 'phone')
-  return <div className={'visual' + (laptop ? '' : ' phones-only')}>
+  const stack = p.tile === 'tall' && laptop
+  return <div className={'visual' + (laptop ? '' : ' phones-only') + (stack ? ' stack-tall' : '')}>
     {laptop
-      ? <><div className="float-laptop"><Device shot={laptop}/></div>{phones[0] && <div className="float-phone fp-side"><Device shot={phones[0]}/></div>}</>
+      ? <>
+        <div className="float-laptop"><Device shot={laptop}/></div>
+        {stack && laptops.slice(1, 3).map((s, i) => <div key={s.src} className={'float-laptop extra-win ew-' + (i + 1)}><Device shot={s}/></div>)}
+        {phones[0] && <div className="float-phone fp-side"><Device shot={phones[0]}/></div>}
+        {stack && phones[1] && <div className="float-phone fp-side2"><Device shot={phones[1]}/></div>}
+      </>
       : phones.slice(0, p.tile === 'tall' ? 4 : 2).map((s, i) => <div key={s.src} className={'float-phone fp-' + i}><Device shot={s}/></div>)}
     {p.demo === 'room' && <span className="badge-3d">3D inside</span>}
   </div>
