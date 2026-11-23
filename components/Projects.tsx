@@ -61,7 +61,6 @@ export default function Projects() {
       <h3>More projects</h3>
       <ul className="more-list">
         {more.map(x => <li key={x.name}>
-          <span className="more-year">{x.year}</span>
           <span className="more-name">{x.name}</span>
           <span className="more-what">{x.what}</span>
           <span className="more-stack">{x.stack}</span>
