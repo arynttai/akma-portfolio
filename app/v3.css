@@ -103,3 +103,4 @@ html[data-theme=dark] .tile-tall .phones-only::before { background: radial-gradi
   .more-link { grid-column: 2; grid-row: 1; }
   .more-what, .more-stack { grid-column: 1 / -1; }
 }
+.edu .logo-aitu { width: 200px; max-width: 70%; height: auto; margin-top: 14px; }

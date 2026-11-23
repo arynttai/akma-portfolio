@@ -67,10 +67,6 @@ export default function About() {
       <div className="edu">
         <h3 className="sub-title">Education</h3>
         <AituLogo/>
-        <ul>
-          <li><b>College: Software Developer diploma</b><span>GPA 3.8</span></li>
-          <li><b>BSc Software Engineering</b><span>GPA 3.5</span></li>
-        </ul>
       </div>
       <div className="skills">
         <h3 className="sub-title">What I build with</h3>
